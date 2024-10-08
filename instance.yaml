@@ -1,0 +1,14 @@
+---
+# This is a cookiecutter configuration context file for
+#
+#   cookiecutter-zope-instance
+#
+# available options are documented at
+# https://github.com/bluedynamics/cookiecutter-zope-instance/
+#
+default_context:
+    wsgi_listen: 0.0.0.0:8080
+    initial_user_password: 'admin'
+    zcml_package_includes: 'bda.plone.prometheusexporter'
+    debug_mode: true
+    dos_protection_form_memory_limit: 1GB

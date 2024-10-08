@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="bda.plone.prometheusexporter"
+    >
+  <!-- 
+    By default everybody with access to any Plone instance can access the metrics page.
+    This is fine, see https://prometheus.io/docs/operating/security/ for more information.
+    If it is necessary to restrict access to the metrics page, you can do so by changing the
+    Ingress configuration to not expose the metrics page to the public.
+   -->
+  <browser:page
+      name="metrics"
+      for="Products.CMFCore.interfaces.ISiteRoot"
+      class=".view.MetricsView"      
+      permission="zope2.View"
+      />
+  <genericsetup:registerProfile
+      name="default"
+      title="bda.plone.prometheusexporter: Installation"
+      description="Package to install bda.plone.prometheusexporter metrics exporter"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      />      
+</configure>

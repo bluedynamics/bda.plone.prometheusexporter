@@ -1,0 +1,78 @@
+[project]
+name = "bda.plone.prometheusexporter"
+version = "1.0a1"
+description = "Prometheus Exporter for Plone and Zope"
+keywords = ["prometheus", "plone"]
+readme = "README.md"
+maintainers = [
+    {name = "Jens Klein", email = "jk@kleinundpartner.at"},
+]
+authors = [
+    {name = "Jens Klein", email = "jk@kleinundpartner.at"},
+]
+requires-python = ">=3.11"
+license = { text = "GPL 2.0" }
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Plone",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+    "Development Status :: 5 - Production/Stable",
+]
+dependencies = [
+    "Products.CMFPlone",
+    "prometheus_client",
+]
+
+[project.urls]
+PyPI = "https://pypi.python.org/pypi/bda.plone.prometheusexporter"
+Changelog = "https://github.com/bluedynamics/bda.plone.prometheusexporter/blob/main/CHANGES.md"
+Source = "https://github.com/bluedynamics/bda.plone.prometheusexporter"
+Issues = "https://github.com/bluedynamics/bda.plone.prometheusexporter/issues"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pdbpp",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/tests"
+]
+[tool.hatch.build.targets.wheel]
+packages = [
+    "/src/bda",
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = [
+    "src",
+]
+
+[tool.isort]
+profile = "plone"
+
+[tool.codespell]
+ignore-words-list = "discreet,"
+skip = './examples/*,./venv/*'
+
+[tool.check-manifest]
+ignore = [
+    ".editorconfig",
+    ".pre-commit-config.yaml",
+    "tox.ini",
+    "mypy.ini",
+    ".flake8",
+    "mx.ini",
+
+]

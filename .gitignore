@@ -1,0 +1,37 @@
+# Generated from:
+# https://github.com/plone/meta/tree/master/config/default
+# See the inline comments on how to expand/tweak this configuration file
+# python related
+*.egg-info
+*.pyc
+*.pyo
+*.mo:wq
+
+# tools related
+build/
+.coverage
+coverage.xml
+dist/
+__pycache__/
+.tox
+.vscode/
+
+# venv related
+pyvenv.cfg
+.venv
+
+# mxdev
+.mxmake
+/instance/
+/*-mxdev.txt
+/reports/
+/sources/
+
+
+##
+# Add extra configuration options in .meta.toml:
+#  [gitignore]
+#  extra_lines = """
+#  _your own configuration lines_
+#  """
+##
