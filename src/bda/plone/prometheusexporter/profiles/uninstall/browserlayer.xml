@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layers>
-  <layer interface="bda.plone.prometheusexporter.interfaces.IPrometheusExporterBrowserLayer"
-         name="bda.plone.prometheusexporter"
+  <layer name="bda.plone.prometheusexporter"
          remove="True"
   />
 </layers>

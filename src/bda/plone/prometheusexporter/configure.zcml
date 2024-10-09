@@ -18,11 +18,18 @@
       class=".view.MetricsView"      
       permission="zope2.View"
       />
-  <genericsetup:registerProfile
+      <genericsetup:registerProfile
       name="default"
       title="bda.plone.prometheusexporter: Installation"
       description="Package to install bda.plone.prometheusexporter metrics exporter"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/default"
+      />      
+      <genericsetup:registerProfile
+      name="uninstall"
+      title="bda.plone.prometheusexporter: Uninstallation"
+      description="Package to uninstall bda.plone.prometheusexporter metrics exporter"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
       />      
 </configure>

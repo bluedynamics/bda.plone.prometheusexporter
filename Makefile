@@ -107,17 +107,17 @@ ZPRETTY_SRC?=src
 
 # Source folder to scan for XML and ZCML files.
 # Default: src
-PYUPGRADE_SRC?=src
+PYUPGRADE_SRC?=src tests
 
 # Additional parameters for pyupgrade, see https://github.com/asottile/pyupgrade for details.
 # Default: --py38-plus
-PYUPGRADE_PARAMETERS?=--py38-plus
+PYUPGRADE_PARAMETERS?=--py311-plus
 
 ## qa.isort
 
 # Source folder to scan for Python files to run isort on.
 # Default: src
-ISORT_SRC?=src
+ISORT_SRC?=src tests
 
 ## qa.black
 
@@ -165,7 +165,7 @@ COVERAGE_COMMAND?=.mxmake/files/run-coverage.sh
 
 # Source folder for code analysis.
 # Default: src
-MYPY_SRC?=src
+MYPY_SRC?=src tests
 
 # Mypy Python requirements to be installed (via pip).
 # Default: types-setuptools

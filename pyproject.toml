@@ -35,7 +35,9 @@ Issues = "https://github.com/bluedynamics/bda.plone.prometheusexporter/issues"
 
 [project.optional-dependencies]
 test = [
-    "pytest",
+    "pytest_plone",
+    "plone.app.testing",
+    "plone.app.robotframework",
     "pdbpp",
 ]
 
@@ -56,7 +58,7 @@ packages = [
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = [
-    "src",
+    "tests",
 ]
 
 [tool.isort]
@@ -74,5 +76,4 @@ ignore = [
     "mypy.ini",
     ".flake8",
     "mx.ini",
-
 ]

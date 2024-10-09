@@ -10,12 +10,12 @@ class PrometheusLayer(PloneSandboxLayer):
     defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
-        import bda.plone.prometheus
+        import bda.plone.prometheusexporter
 
-        self.loadZCML(package=bda.plone.prometheus)
+        self.loadZCML(package=bda.plone.prometheusexporter)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, "bda.plone.prometheus:default")
+        applyProfile(portal, "bda.plone.prometheusexporter:default")
 
 
 PROMETHEUS_FIXTURE = PrometheusLayer()
