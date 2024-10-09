@@ -1,0 +1,37 @@
+name: Python package CI
+
+on:
+  - push
+  - workflow_call
+
+  env:
+    MXENV_UV_GLOBAL: "true"
+    VENV_ENABLED: "false"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+    - uses: hynek/setup-cached-uv@v2
+    - name: Install dependencies
+      run: |
+        make install
+    - name: Run pyest (via mxmake)
+      run: make test
+      
+  check-package:
+    name: Build & inspect our package.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hynek/build-and-inspect-python-package@v2
