@@ -6,7 +6,6 @@ on:
 
 env:
   MXENV_UV_GLOBAL: "true"
-  VENV_ENABLED: "false"
 
 jobs:
   build:
