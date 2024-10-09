@@ -4,9 +4,9 @@ on:
   - push
   - workflow_call
 
-  env:
-    MXENV_UV_GLOBAL: "true"
-    VENV_ENABLED: "false"
+env:
+  MXENV_UV_GLOBAL: "true"
+  VENV_ENABLED: "false"
 
 jobs:
   build:
