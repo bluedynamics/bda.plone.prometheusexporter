@@ -4,6 +4,8 @@ This Plone add-on provides a `/metrics` endpoint on Plone site root.
 
 It provides metrics of the ZODB and Plone.
 
+## WIP, Features
+
 Info:
 - [x] Zope version
 - [x] Python version

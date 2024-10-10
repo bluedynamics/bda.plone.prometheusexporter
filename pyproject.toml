@@ -1,6 +1,6 @@
 [project]
 name = "bda.plone.prometheusexporter"
-version = "1.0a1"
+version = "1.0a2.dev0"
 description = "Prometheus Exporter for Plone and Zope"
 keywords = ["prometheus", "plone"]
 readme = "README.md"
